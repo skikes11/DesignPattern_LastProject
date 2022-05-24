@@ -1,5 +1,7 @@
 eclipse.preferences.version=1
 encoding//src/Client.java=UTF-8
-encoding//src/SoLuongSinhVien.java=UTF-8
-encoding//src/TimSinhVien.java=UTF-8
-encoding//src/XoaSinhVien.java=UTF-8
+encoding//src/Controller/NhapThongTinSinhVien.java=UTF-8
+encoding//src/Controller/SoLuongSinhVien.java=UTF-8
+encoding//src/Controller/ThemSinhVien.java=UTF-8
+encoding//src/Controller/TimSinhVien.java=UTF-8
+encoding//src/Controller/XoaSinhVien.java=UTF-8

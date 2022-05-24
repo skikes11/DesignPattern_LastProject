@@ -1,4 +1,6 @@
+package Controller;
 
+import Model.*;
 public class InDanhSachSinhVien   {
 		
 	public void InDanhSach(DanhSachSinhVien dssv) {

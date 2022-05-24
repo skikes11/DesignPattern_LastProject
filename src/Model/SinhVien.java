@@ -1,3 +1,6 @@
+package Model;
+import java.util.List;
+import Brige_Pattern.*;
 
 public class SinhVien extends WrapSinhVien {
 	private String mssv;
@@ -5,19 +8,49 @@ public class SinhVien extends WrapSinhVien {
 	private double gpa;
 	private String faculty;
 	private String course;
+	private String hocluc;
+	private List<MonHoc> listMonHoc;
 	
-	public SinhVien(ChucNangSV chucNangSV, String mssv, String name, double gpa, String faculty, String course) {
+	
+
+
+	public SinhVien(ChucNangSV chucNangSV) {
+		super(chucNangSV);
+	}
+
+
+
+
+
+	public SinhVien(ChucNangSV chucNangSV, String mssv, String name, double gpa, String faculty, String course,
+			String hocluc, List<MonHoc> listMonHoc) {
 		super(chucNangSV);
 		this.mssv = mssv;
 		this.name = name;
 		this.gpa = gpa;
 		this.faculty = faculty;
 		this.course = course;
+		this.hocluc = hocluc;
+		this.listMonHoc = listMonHoc;
 	}
 
-	public SinhVien(ChucNangSV chucNangSV) {
+
+	
+	
+	
+
+
+	public SinhVien(ChucNangSV chucNangSV, String mssv, String name, double gpa, String faculty, String course,
+			String hocluc) {
 		super(chucNangSV);
+		this.mssv = mssv;
+		this.name = name;
+		this.gpa = gpa;
+		this.faculty = faculty;
+		this.course = course;
+		this.hocluc = hocluc;
 	}
+
 
 
 
@@ -27,9 +60,15 @@ public class SinhVien extends WrapSinhVien {
 	}
 
 
+
+
+
 	public void setMssv(String mssv) {
 		this.mssv = mssv;
 	}
+
+
+
 
 
 	public String getName() {
@@ -37,9 +76,15 @@ public class SinhVien extends WrapSinhVien {
 	}
 
 
+
+
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
+
+
 
 
 	public double getGpa() {
@@ -47,14 +92,22 @@ public class SinhVien extends WrapSinhVien {
 	}
 
 
+
+
+
 	public void setGpa(double gpa) {
 		this.gpa = gpa;
 	}
 
 
+
+
+
 	public String getFaculty() {
 		return faculty;
 	}
+
+
 
 
 
@@ -64,9 +117,14 @@ public class SinhVien extends WrapSinhVien {
 
 
 
+
+
 	public String getCourse() {
 		return course;
 	}
+
+
+
 
 
 	public void setCourse(String course) {
@@ -77,11 +135,48 @@ public class SinhVien extends WrapSinhVien {
 
 
 
+	public String getHocluc() {
+		return hocluc;
+	}
+
+
+
+
+
+	public void setHocluc(String hocluc) {
+		this.hocluc = hocluc;
+	}
+
+
+
+
+
+	public List<MonHoc> getListMonHoc() {
+		return listMonHoc;
+	}
+
+
+
+
+
+	public void setListMonHoc(List<MonHoc> listMonHoc) {
+		this.listMonHoc = listMonHoc;
+	}
+
+
+
+	
+	
+	
+
+
 	@Override
 	public String toString() {
 		return "SinhVien [mssv=" + mssv + ", name=" + name + ", gpa=" + gpa + ", faculty=" + faculty + ", course="
-				+ course + "] \n";
+				+ course + ", hocluc=" + hocluc + "]\n";
 	}
+
+
 
 
 

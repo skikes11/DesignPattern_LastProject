@@ -1,3 +1,5 @@
+package Brige_Pattern;
+
 
 public class SinhVienCLC implements ChucNangSV {
 

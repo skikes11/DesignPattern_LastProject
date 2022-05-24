@@ -1,6 +1,8 @@
+package Controller;
 import java.util.Collections;
 import java.util.Comparator;
 
+import Model.*;
 public class SapXepSinhVienTheoGPA {
 	public void SapXepSinhVienTheoGPA_HightoLow(DanhSachSinhVien dssv) {
 		

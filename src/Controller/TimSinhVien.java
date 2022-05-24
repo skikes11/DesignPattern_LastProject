@@ -1,4 +1,6 @@
+package Controller;
 
+import Model.*;
 import java.util.Scanner;
 
 public class TimSinhVien {
@@ -8,7 +10,6 @@ public class TimSinhVien {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("VUI LÒNG NHẬP MSSV CỦA SINH VIÊN CẦN TÌM");
 		String mssv = sc.nextLine();
-		sc.close();
 		for(SinhVien SV : dssv.danhsach) {
 			if(SV.getMssv().equals(mssv)) {
 				System.out.println(SV);

@@ -1,3 +1,4 @@
+package Brige_Pattern;
 
 public abstract class WrapSinhVien {
 

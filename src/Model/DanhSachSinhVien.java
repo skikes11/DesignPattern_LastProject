@@ -1,7 +1,8 @@
+package Model;
 import java.util.ArrayList;
 
 public class DanhSachSinhVien {
-	protected ArrayList<SinhVien>	danhsach;
+	public ArrayList<SinhVien>	danhsach;
 	
 	
 	public ArrayList<SinhVien> getDanhsach() {
