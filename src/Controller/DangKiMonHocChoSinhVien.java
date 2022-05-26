@@ -35,7 +35,7 @@ public class DangKiMonHocChoSinhVien {
 						SV.getListMonHoc().add(dsmh.getDanhsach().get(luaChonMonHoc-1));
 						}						
 						
-						System.out.println("ĐĂNG KÍ THÀNH CÔNG MÔN HỌC "+dsmh.getDanhsach().get(luaChonMonHoc).getTenMonHoc()+" CHO SINH VIÊN "+ SV.getName() +" VỚI MSSV: "+SV.getMssv()+"");
+						System.out.println("ĐĂNG KÍ THÀNH CÔNG MÔN HỌC "+dsmh.getDanhsach().get(luaChonMonHoc-1).getTenMonHoc()+" CHO SINH VIÊN "+ SV.getName() +" VỚI MSSV: "+SV.getMssv()+"");
 						System.out.println("DANH SÁCH MÔN HỌC ĐÃ ĐĂNG KÝ HIỆN TẠI CỦA SINH VIÊN "+SV.getName() +" LÀ");
 						inDanhSachMonHoc.InDanhSach(SV.getListMonHoc());					
 					}else {

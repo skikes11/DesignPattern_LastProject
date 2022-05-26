@@ -1,28 +1,33 @@
 package Model;
 
 public class MonHoc {
-	private int id;
 	private String tenMonHoc;
 	private int SoTinChi;
 	
+	
 
 
-	public MonHoc(int id, String tenMonHoc, int soTinChi) {
+
+
+
+	public MonHoc() {
 		super();
-		this.id = id;
+	}
+
+
+
+
+
+
+
+	public MonHoc(String tenMonHoc, int soTinChi) {
+		super();
 		this.tenMonHoc = tenMonHoc;
 		SoTinChi = soTinChi;
 	}
 
 
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
 
 
 
@@ -34,9 +39,15 @@ public class MonHoc {
 
 
 
+
+
+
 	public void setTenMonHoc(String tenMonHoc) {
 		this.tenMonHoc = tenMonHoc;
 	}
+
+
+
 
 
 
@@ -48,6 +59,9 @@ public class MonHoc {
 
 
 
+
+
+
 	public void setSoTinChi(int soTinChi) {
 		SoTinChi = soTinChi;
 	}
@@ -55,9 +69,12 @@ public class MonHoc {
 
 
 
+
+
+
 	@Override
 	public String toString() {
-		return ""+id+". MonHoc [ tenMonHoc=" + tenMonHoc + ", SoTinChi=" + SoTinChi + "]\n";
+		return "MonHoc [ tenMonHoc=" + tenMonHoc + ", SoTinChi=" + SoTinChi + "]\n";
 	}
 	
 	
