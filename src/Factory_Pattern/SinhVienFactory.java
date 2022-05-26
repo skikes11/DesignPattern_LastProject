@@ -11,10 +11,12 @@ public class SinhVienFactory {
 		
 		
 		
-		SinhVien sv2 = new SinhVien(new SinhVienDaiTra());	
+		SinhVien sv2;
 		
-		if(HeSV==2) {
+		if(HeSV == 2) {
 			sv2 = new SinhVien(new SinhVienCLC()); 
+		}else {
+			sv2 = new SinhVien(new SinhVienDaiTra()); 
 		}
 			
 		sv2.setMssv(mssv);
