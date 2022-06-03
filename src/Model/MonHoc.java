@@ -6,17 +6,9 @@ public class MonHoc {
 	
 	
 
-
-
-
-
 	public MonHoc() {
 		super();
 	}
-
-
-
-
 
 
 
@@ -28,16 +20,9 @@ public class MonHoc {
 
 
 
-
-
-
-
 	public String getTenMonHoc() {
 		return tenMonHoc;
 	}
-
-
-
 
 
 
@@ -49,26 +34,15 @@ public class MonHoc {
 
 
 
-
-
-
 	public int getSoTinChi() {
 		return SoTinChi;
 	}
 
 
 
-
-
-
-
 	public void setSoTinChi(int soTinChi) {
 		SoTinChi = soTinChi;
 	}
-
-
-
-
 
 
 

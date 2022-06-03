@@ -20,6 +20,8 @@ public class Client {
 	static DangKiMonHocChoSinhVien dangKiMonHocChoSinhVien = new DangKiMonHocChoSinhVien();
 	static DanhSachMonHocSVDangKi danhSachMonHocSVDangKi = new DanhSachMonHocSVDangKi();
 	static XoaMonHocDaDangKiChoSinhVien xoaMonHocDaDangKiChoSinhVien = new XoaMonHocDaDangKiChoSinhVien();
+	static MonHocFactory monHocFactory = new MonHocFactory();
+
 	public static void main(String[] args) {
 		
 		//Sinh Vien Database
@@ -54,6 +56,14 @@ public class Client {
 		dsmh.danhsach.add(new MonHoc("Thể Chất 3", 3));
 		dsmh.danhsach.add(new MonHoc("Xác Xuất Thống Kê", 3));
 		dsmh.danhsach.add(new MonHoc("Đại Số Tuyến Tính", 4));
+		
+		// Test Null Object Pattern with Factory
+		
+		dsmh.danhsach.add(monHocFactory.getMonHoc("Lịch sử đảng", 3));
+		dsmh.danhsach.add(monHocFactory.getMonHoc(null, 0));
+		
+		
+		
 		
 		Scanner sc = new Scanner(System.in);
 		int option;
