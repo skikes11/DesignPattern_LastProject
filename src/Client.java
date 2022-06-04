@@ -5,6 +5,7 @@ import Brige_Pattern.*;
 import Controller.*;
 import Factory_Pattern.*;
 import Model.*;
+import Proxy_Pattern.*;
 public class Client {
 	static ThemSinhVien themSinhVien = new ThemSinhVien();
 	static DanhSachSinhVien dssv = new DanhSachSinhVien();
@@ -13,7 +14,6 @@ public class Client {
 	static XoaSinhVien xoaSinhVien = new XoaSinhVien();
 	static SoLuongSinhVien soLuongSinhVien = new SoLuongSinhVien();
 	static TimSinhVien timSinhVien = new TimSinhVien();
-	static XoaDuLieuDSSV xoaDuLieuDSSV = new XoaDuLieuDSSV();
 	static SapXepSinhVienTheoGPA sapXepSinhVienTheoGPA = new SapXepSinhVienTheoGPA();
 	static SinhVienFactory sinhVienFactory = new SinhVienFactory();
 	static InDanhSachMonHoc dsmhPrinter = new InDanhSachMonHoc();
@@ -21,7 +21,8 @@ public class Client {
 	static DanhSachMonHocSVDangKi danhSachMonHocSVDangKi = new DanhSachMonHocSVDangKi();
 	static XoaMonHocDaDangKiChoSinhVien xoaMonHocDaDangKiChoSinhVien = new XoaMonHocDaDangKiChoSinhVien();
 	static MonHocFactory monHocFactory = new MonHocFactory();
-
+	static DanhSachGiaoVien dsgv = new DanhSachGiaoVien();
+	static InDanhSachGiaoVien inDanhSachGiaoVien = new InDanhSachGiaoVien();
 	public static void main(String[] args) {
 		
 		//Sinh Vien Database
@@ -29,7 +30,7 @@ public class Client {
 		dssv.danhsach.add(new SinhVien(new SinhVienCLC(),"19110232", "Dinh Bao Long", 8.6, "Khoa CNTT", "K19", null));
 		dssv.danhsach.add(new SinhVien(new SinhVienDaiTra(),"20110312", "Dinh Bao Hoang", 6.6, "Khoa CNTT", "K20", null));
 		dssv.danhsach.add(new SinhVien(new SinhVienCLC(),"17110232", "Nguyen Nhat Le", 7.4, "Khoa CNTT", "K17", null));
-		dssv.danhsach.add(new SinhVien(new SinhVienCLC(),"17110232", "Nguyen Hai Dang", 5.6, "Khoa NNA", "K17", null));
+		dssv.danhsach.add(new SinhVien(new SinhVienCLC(),"17110242", "Nguyen Hai Dang", 5.6, "Khoa NNA", "K17", null));
 		dssv.danhsach.add(new SinhVien(new SinhVienCLC(),"19113333", "Le Thanh Trung", 6.6, "Khoa CNTT", "K19", null));
 		dssv.danhsach.add(new SinhVien(new SinhVienDaiTra(),"19110303", "Dinh Thanh Hai", 8.9, "Khoa CNTT", "K19", null));
 		dssv.danhsach.add(new SinhVien(new SinhVienDaiTra(),"18110232", "Nguyen Thanh Dat", 7.3, "Khoa CNTT", "K18", null));
@@ -38,7 +39,7 @@ public class Client {
 		dssv.danhsach.add(new SinhVien(new SinhVienDaiTra(),"17132321", "Dinh Bao Quang", 8.0, "Khoa CNTT", "K17", null));
 		dssv.danhsach.add(new SinhVien(new SinhVienCLC(),"16110232", "Nhat Thang Quang", 9.6, "Khoa CNTT", "K16", null));
 		dssv.danhsach.add(new SinhVien(new SinhVienCLC(),"16110232", "Dinh Bao Quynh", 8.6, "Khoa CNTT", "K16", null));
-		dssv.danhsach.add(new SinhVien(new SinhVienCLC(),"19110232", "Nguyen Thanh Truong", 8.6, "Khoa CNTT", "K19", null));
+		dssv.danhsach.add(new SinhVien(new SinhVienCLC(),"19115232", "Nguyen Thanh Truong", 8.6, "Khoa CNTT", "K19", null));
 		//MonHoc Database
 		
 		dsmh.danhsach.add(new MonHoc("Toán 1", 3));
@@ -56,6 +57,16 @@ public class Client {
 		dsmh.danhsach.add(new MonHoc("Thể Chất 3", 3));
 		dsmh.danhsach.add(new MonHoc("Xác Xuất Thống Kê", 3));
 		dsmh.danhsach.add(new MonHoc("Đại Số Tuyến Tính", 4));
+		
+		//Database GiaoVien (Proxy)
+		
+		dsgv.danhsach.add(new ProxyGiaoVien("GV151", "Trần Đức Cường", 35));
+		dsgv.danhsach.add(new ProxyGiaoVien("GV125", "Nguyễn Đăng Khoa", 33));
+		dsgv.danhsach.add(new ProxyGiaoVien("GV162", "Nguyễn Việt Hùng", 43));
+		dsgv.danhsach.add(new ProxyGiaoVien("GV622", "Nguyễn Thanh Lợi", 49));
+		
+	
+		
 		
 		// Test Null Object Pattern with Factory
 		
@@ -78,12 +89,12 @@ public class Client {
 			+"3. XÓA SINH VIÊN\n"
 			+"4. KIỂM TRA SỐ LƯỢNG SINH VIÊN TRONG DANH SÁCH\n"
 			+"5. TÌM KIẾM SINH VIÊN DỰA TRÊN MÃ SINH VIÊN\n"
-			+"6. XÓA TẤT CẢ DỮ LIỆU TRONG DANH SÁCH SINH VIÊN\n"
-			+"7. SẮP XẾP VÀ IN RA DANH SÁCH SINH VIÊN ĐƯỢC SẮP XẾP THEO ĐIỂM GPA TỪ CAO XUỐNG THẤP\n"
-			+"8. IN DANH SÁCH MÔN HỌC\n"
-			+"9. ĐĂNG KÍ MÔN HỌC CHO SINH VIÊN\n"
-			+"10. XÓA MÔN HỌC ĐÃ ĐĂNG KÍ CHO SINH VIÊN\n"
-			+"11. DANH SÁCH MÔN HỌC MÀ SINH VIÊN ĐÃ ĐĂNG KÍ VÀ TỔNG HỌC PHÍ PHẢI ĐÓNG\n"
+			+"6. SẮP XẾP VÀ IN RA DANH SÁCH SINH VIÊN ĐƯỢC SẮP XẾP THEO ĐIỂM GPA TỪ CAO XUỐNG THẤP\n"
+			+"7. IN DANH SÁCH MÔN HỌC\n"
+			+"8. ĐĂNG KÍ MÔN HỌC CHO SINH VIÊN\n"
+			+"9. XÓA MÔN HỌC ĐÃ ĐĂNG KÍ CHO SINH VIÊN\n"
+			+"10. DANH SÁCH MÔN HỌC MÀ SINH VIÊN ĐÃ ĐĂNG KÍ VÀ TỔNG HỌC PHÍ PHẢI ĐÓNG\n"
+			+"11. IN DANH SÁCH GIÁO VIÊN\n"
 				);
 		
 		option = sc.nextInt();
@@ -117,31 +128,31 @@ public class Client {
 				
 				break;
 			}
+			
 			case 6:{
-				xoaDuLieuDSSV.XoaDuLieuDanhSach(dssv);
-				
-				break;
-			}
-			case 7:{
 				sapXepSinhVienTheoGPA.SapXepSinhVienTheoGPA_HightoLow(dssv);
 				break;
 			}
-			case 8:{
+			case 7:{
 				dsmhPrinter.InDanhSach(dsmh.getDanhsach());
 				break;
 			}
-			case 9:{
+			case 8:{
 				dangKiMonHocChoSinhVien.DangKiMonHocChoSV(dssv, dsmh);
 				break;
 			}	
 			
-			case 10:{
+			case 9:{
 				xoaMonHocDaDangKiChoSinhVien.XoaMonHocDaDangKiChoSV(dssv);
 				break;
 			}
 			
-			case 11:{
+			case 10:{
 				danhSachMonHocSVDangKi.InDanhSachMonHocSinhVienDangKi_VaHocPhiPhaiDong(dssv);
+				break;
+			}
+			case 11:{
+				inDanhSachGiaoVien.InDanhSach(dsgv.getDanhsach());
 				break;
 			}
 			

@@ -7,6 +7,5 @@ public class SinhVienDaiTra implements ChucNangSV {
 	public long DongHocPhi(int SoTinChi) {
 		return SoTinChi*280000;
 	}
-
 	
 }
